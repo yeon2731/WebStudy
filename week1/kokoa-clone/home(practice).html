@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <title>The Kokoa Times</title>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      div {
+        background-color: teal;
+        width: 200px;
+        height: 200px;
+      }
+      @media screen and (max-width: 600px) {
+        div {
+          background-color: tomato;
+        }
+      }
+      @media print {
+        body {
+          background-color: tomato;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
