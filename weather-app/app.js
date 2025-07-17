@@ -1,5 +1,4 @@
 import { OpenWeatherMap_API_KEY } from "./config.js";
-const APIKEY = OpenWeatherMap_API_KEY;
 const searchBox = document.getElementById("search__input");
 const searchBtn = document.getElementById("search__btn");
 const weatherTemp = document.getElementById("weather__temp");
@@ -36,7 +35,7 @@ async function getLocationAuto() {
 }
 
 async function getLocationByCity(city) {
-  const geo_url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${APIKEY}`;
+  const geo_url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${OpenWeatherMap_API_KEY}`;
   console.log(geo_url);
   try {
     const geo_res = await fetch(geo_url);
@@ -48,7 +47,7 @@ async function getLocationByCity(city) {
 }
 
 async function getReverseLocation(coords) {
-  const reverse_geo_url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${coords[0]}&lon=${coords[1]}&limit=1&appid=${APIKEY}`;
+  const reverse_geo_url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${coords[0]}&lon=${coords[1]}&limit=1&appid=${OpenWeatherMap_API_KEY}`;
   try {
     const geo_res = await fetch(reverse_geo_url);
     let geo_data = await geo_res.json();
@@ -60,7 +59,7 @@ async function getReverseLocation(coords) {
 }
 
 async function getWeatherJson(lat, lon) {
-  const weather_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKEY}`;
+  const weather_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OpenWeatherMap_API_KEY}`;
   console.log(weather_url);
   try {
     const weather_res = await fetch(weather_url);
